@@ -1,0 +1,53 @@
+===========
+Plugin body
+===========
+
+
+Purpose
+=======
+This plugin is made to allow you to monitor some body metrics :
+
+* weight of your body
+* % of muscle in the body
+* % of fat in the body
+* % of water in the body
+* % of bone in the body
+
+It is not related to any connected device and so, you will have to manually give the informations to Domogik.
+
+To allow you to easily give the informations, this plugin includes some new butler features that will allow you to just speak the data to the butler.
+
+Plugin configuration
+====================
+
+There is no specific configuration needed for this plugin.
+
+Creating a device
+=================
+
+In administration, go to **Organization > Devices** page. 
+
+You will have to create a device for each person you want to monitor.
+
+=========== ======================= =========================================
+Field       Suggested value         Description
+=========== ======================= =========================================
+Name        Someone name            Just set a person of your family name
+=========== ======================= =========================================
+
+Speak to the butler
+===================
+
+French examples
+---------------
+
+* je pèse 70 kilos
+* je fais 20 pourcents de masse graisseuse
+* je fais 60 pourcents de masse aqueuse
+* je fais 30 pourcents de masse musculaire
+* je fais 3 pourcents de masse osseuse
+* quel est mon poids
+* quelle est ma masse graisseuse
+* donne-moi ma masse aqueuse
+* quel est mon pourcentage de muscle
+* dis-moi pour pourcentage de masse osseuse

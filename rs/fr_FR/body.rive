@@ -10,48 +10,98 @@
 
 // non nommé
 + je pese * [@kg]
-* <get name> == undefined  => <set dialogue=set_weight><set weight=<star>>Qui es tu ?
+* <get name> == undefined  => <set dialog=set_weight><set weight=<star>>Qui es tu ?
 - <call>do_command_per_reference fr_FR, DT_kgWeight, set_weight, <get name>, <star1></call>
 
-// TODO : ameliorer a base de redirection
-// TODO : ameliorer a base de redirection
-// TODO : ameliorer a base de redirection
-// TODO : ameliorer a base de redirection
-// TODO : ameliorer a base de redirection
-// TODO : ameliorer a base de redirection
+// pour plus d'infos que le 'qui es tu ?', voir package domogik-brain-base, fichier user.rive
 + *
 % qui es tu ?
-* <get dialogue> == get_weight => <set name=<star1>><call>get_sensor_value fr_FR, DT_kgWeight, kg, <star1></call>
-* <get dialogue> == set_weight => <set name=<star1>><call>do_command_per_reference fr_FR, DT_kgWeight, set_weight, <star1>, <get weight></call>
-* <get dialogue> == set_muscle => <set name=<star1>><call>do_command_per_reference fr_FR, DT_Scaling, set_muscle, <star1>, <get muscle></call>
-* <get dialogue> == set_water => <set name=<star1>><call>do_command_per_reference fr_FR, DT_Scaling, set_water, <star1>, <get water></call>
-* <get dialogue> == set_bone => <set name=<star1>><call>do_command_per_reference fr_FR, DT_Scaling, set_bone, <star1>, <get bone></call>
-* <get dialogue> == set_fat => <set name=<star1>><call>do_command_per_reference fr_FR, DT_Scaling, set_fat, <star1>, <get fat></call>
-- .
+* <get dialog> == get_weight =>  <set dialog=undefined> <set name=<star>> {@quel est mon poids}
+* <get dialog> == set_weight =>  <set dialog=undefined> <set name=<star>> {@je pese <get weight> kg}
+* <get dialog> == get_muscle =>  <set dialog=undefined> <set name=<star>> {@quel est mon pourcentage de muscle}
+* <get dialog> == set_muscle =>  <set dialog=undefined> <set name=<star>> {@je fais <get muscle> pourcent de muscle}
+* <get dialog> == get_water  =>  <set dialog=undefined> <set name=<star>> {@quel est mon pourcentage d eau}
+* <get dialog> == set_water  =>  <set dialog=undefined> <set name=<star>> {@je fais <get water> pourcent d'eau}
+* <get dialog> == get_bone   =>  <set dialog=undefined> <set name=<star>> {@quel est mon pourcentage d os}
+* <get dialog> == set_bone   =>  <set dialog=undefined> <set name=<star>> {@je fais <get bone> pourcent d'os}
+* <get dialog> == get_fat    =>  <set dialog=undefined> <set name=<star>> {@quel est mon pourcentage de graisse}
+* <get dialog> == set_fat    =>  <set dialog=undefined> <set name=<star>> {@je fais <get fat> pourcent de gras}
+
 
 // autres données
 
 + je fais * [@pourcent] de (muscle@s|masse musculaire)
-* <get name> == undefined  => <set dialogue=set_muscle><set muscle=<star>>Qui es tu ?
+* <get name> == undefined  => <set dialog=set_muscle><set muscle=<star>>Qui es tu ?
 - <call>do_command_per_reference fr_FR, DT_Scaling, set_muscle, <get name>, <star1></call>
 
 + je fais * [@pourcent] (d eau|de masse aqueuse)
-* <get name> == undefined  => <set dialogue=set_water><set water=<star>>Qui es tu ?
+* <get name> == undefined  => <set dialog=set_water><set water=<star>>Qui es tu ?
 - <call>do_command_per_reference fr_FR, DT_Scaling, set_water, <get name>, <star1></call>
 
 + je fais * [@pourcent] (d os|de masse osseuse)
-* <get name> == undefined  => <set dialogue=set_bone><set bone=<star>>Qui es tu ?
+* <get name> == undefined  => <set dialog=set_bone><set bone=<star>>Qui es tu ?
 - <call>do_command_per_reference fr_FR, DT_Scaling, set_bone, <get name>, <star1></call>
 
 + je fais * [@pourcent] de (graisse|gras|masse graisseuse|masse grasse)
-* <get name> == undefined  => <set dialogue=set_fat><set fat=<star>>Qui es tu ?
+* <get name> == undefined  => <set dialog=set_fat><set fat=<star>>Qui es tu ?
 - <call>do_command_per_reference fr_FR, DT_Scaling, set_fat, <get name>, <star1></call>
 
 
 
 // consultation des informations
 
-+ quel est mon poids
-* <get name> == undefined  => <set dialogue=get_weight>Qui es tu ?
-- <call>get_sensor_value fr_FR, DT_kgWeight, kg, <get name></call>
++ shortcut body weight
+* <get name> == undefined  => <set dialog=get_weight>Qui es tu ?
+- Ton poids est <call>get_sensor_value fr_FR, DT_kgWeight, kg, <get name></call>
 
++ shortcut body muscle
+* <get name> == undefined  => <set dialog=get_muscle>Qui es tu ?
+- Ta masse musculaire est <call>get_sensor_value_per_reference fr_FR, DT_Scaling, %, muscle, <get name></call>
+
++ shortcut body water
+* <get name> == undefined  => <set dialog=get_water>Qui es tu ?
+- Ta masse aqueuse est <call>get_sensor_value_per_reference fr_FR, DT_Scaling, %, water, <get name></call>
+
++ shortcut body bone
+* <get name> == undefined  => <set dialog=get_bone>Qui es tu ?
+- Ta masse osseuse est <call>get_sensor_value_per_reference fr_FR, DT_Scaling, %, bone, <get name></call>
+
++ shortcut body fat
+* <get name> == undefined  => <set dialog=get_fat>Qui es tu ?
+- Ta masse graisseuse est <call>get_sensor_value_per_reference fr_FR, DT_Scaling, %, fat, <get name></call>
+
+
+
++ @donneMoi mon poids
+@ shortcut body weight
+
++ combien je pese
+@ shortcut body weight
+
+
++ @donneMoi mon (@pourcent) de (muscle@s|masse musculaire) 
+@ shortcut body muscle
+
++ @donneMoi ma masse musculaire
+@ shortcut body muscle
+
+
++ @donneMoi mon (@pourcent) (d eau|de masse aqueuse)
+@ shortcut body water
+
++ @donneMoi ma masse aqueuse
+@ shortcut body water
+
+
++ @donneMoi mon (@pourcent) (d os|de masse osseuse)
+@ shortcut body bone
+
++ @donneMoi ma masse osseuse
+@ shortcut body bone
+
+
++ @donneMoi mon (@pourcent) de (graisse|gras|masse graisseuse|masse grasse)
+@ shortcut body fat
+
++ @donneMoi ma masse (graisseuse|grasse)
+@ shortcut body fat

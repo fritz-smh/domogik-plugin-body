@@ -1,0 +1,164 @@
+{
+    "json_version": 2,
+    
+    "identity": {
+        "author": "Fritz", 
+        "author_email": "fritz.smh at gmail.com", 
+        "tags": ["body", "health", "weight", "fat", "muscle", "water", "bone"], 
+        "dependencies": [],
+        "description": "Domogik Plugin for your body data tracking", 
+        "domogik_min_version": "0.5.0", 
+        "name": "body", 
+        "type": "plugin", 
+        "version": "1.0"
+    },
+
+    "products" : [ ],
+    
+    "configuration": [], 
+    
+    "device_types": {
+        "body.body": {
+            "id": "body.body",
+            "description": "Weight in kg, fat in %, muscle in %, water in %, bone in %", 
+            "name": "Body",
+            "commands": ["set_weight", "set_fat", "set_muscle", "set_water", "set_bone"],
+            "sensors": ["weight", "fat", "muscle", "water", "bone"],
+            "parameters": []
+        }
+    },
+
+    "commands": { 
+        "set_weight" : {
+            "name" : "Set weight in kg",
+            "return_confirmation" : true,
+            "parameters" : [
+                {
+                    "key" : "value",
+                    "data_type" : "DT_kgWeight",
+                    "conversion" : "" 
+                }
+            ]
+        },
+        "set_fat" : {
+            "name" : "Set fat in %",
+            "return_confirmation" : true,
+            "parameters" : [
+                {
+                    "key" : "value",
+                    "data_type" : "DT_Scaling",
+                    "conversion" : "" 
+                }
+            ]
+        },
+        "set_muscle" : {
+            "name" : "Set muscle in %",
+            "return_confirmation" : true,
+            "parameters" : [
+                {
+                    "key" : "value",
+                    "data_type" : "DT_Scaling",
+                    "conversion" : "" 
+                }
+            ]
+        },
+        "set_water" : {
+            "name" : "Set water in %",
+            "return_confirmation" : true,
+            "parameters" : [
+                {
+                    "key" : "value",
+                    "data_type" : "DT_Scaling",
+                    "conversion" : "" 
+                }
+            ]
+        },
+        "set_bone" : {
+            "name" : "Set bone in %",
+            "return_confirmation" : true,
+            "parameters" : [
+                {
+                    "key" : "value",
+                    "data_type" : "DT_Scaling",
+                    "conversion" : "" 
+                }
+            ]
+        }
+    },
+
+    "sensors": {
+        "weight": {
+            "name": "Weight in kg",
+            "incremental" : false,
+            "data_type": "DT_kgWeight",
+            "conversion" : "",
+            "timeout" : 0,
+            "history": {
+                "store": true,
+                "duplicate" : true,
+                "max": 0,
+                "expire": 0,
+                "round_value": 0
+            }
+        },
+        "fat": {
+            "name": "Fat in %",
+            "incremental" : false,
+            "data_type": "DT_Scaling",
+            "conversion" : "",
+            "timeout" : 0,
+            "history": {
+                "store": true,
+                "duplicate" : true,
+                "max": 0,
+                "expire": 0,
+                "round_value": 0
+            }
+        },
+        "muscle": {
+            "name": "Muscle in %",
+            "incremental" : false,
+            "data_type": "DT_Scaling",
+            "conversion" : "",
+            "timeout" : 0,
+            "history": {
+                "store": true,
+                "duplicate" : true,
+                "max": 0,
+                "expire": 0,
+                "round_value": 0
+            }
+        },
+        "water": {
+            "name": "Water in %",
+            "incremental" : false,
+            "data_type": "DT_Scaling",
+            "conversion" : "",
+            "timeout" : 0,
+            "history": {
+                "store": true,
+                "duplicate" : true,
+                "max": 0,
+                "expire": 0,
+                "round_value": 0
+            }
+        },
+        "bone": {
+            "name": "Bone in %",
+            "incremental" : false,
+            "data_type": "DT_Scaling",
+            "conversion" : "",
+            "timeout" : 0,
+            "history": {
+                "store": true,
+                "duplicate" : true,
+                "max": 0,
+                "expire": 0,
+                "round_value": 0
+            }
+        }
+    },
+    
+    "xpl_stats": {},
+    "xpl_commands": {}
+}
