@@ -1,4 +1,4 @@
-# Domogik Plugin mirror
+# Domogik Plugin body
 
 ## Purpose
 
