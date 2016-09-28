@@ -87,13 +87,13 @@ class BodyManager(Plugin):
                 if cmd == "set_weight":
                     return self.sensors[device_id]['weight']
                 elif cmd == "set_fat":
-                    return self.sensors[device_id]['fat']
+                    return self.sensors[device_id]['fat_ratio']
                 elif cmd == "set_muscle":
-                    return self.sensors[device_id]['muscle']
+                    return self.sensors[device_id]['muscle_ratio']
                 elif cmd == "set_bone":
-                    return self.sensors[device_id]['bone']
+                    return self.sensors[device_id]['bone_ratio']
                 elif cmd == "set_water":
-                    return self.sensors[device_id]['water']
+                    return self.sensors[device_id]['body_water']
         return None
 
 
