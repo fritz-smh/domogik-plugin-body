@@ -20,10 +20,10 @@
     "device_types": {
         "body.body": {
             "id": "body.body",
-            "description": "Weight in kg, fat in %, muscle in %, water in %, bone in %", 
+            "description": "Weight in kg, Fat Ratio in %, Muscle Ratio in %, Body Water in %, Bone Ratio in %", 
             "name": "Body",
             "commands": ["set_weight", "set_fat", "set_muscle", "set_water", "set_bone"],
-            "sensors": ["weight", "fat", "muscle", "water", "bone"],
+            "sensors": ["weight", "fat_ratio", "muscle_ratio", "body_water", "bone_ratio"],
             "parameters": []
         }
     },
@@ -101,8 +101,8 @@
                 "round_value": 0
             }
         },
-        "fat": {
-            "name": "Fat in %",
+        "fat_ratio": {
+            "name": "Fat Ratio in %",
             "incremental" : false,
             "data_type": "DT_Scaling",
             "conversion" : "",
@@ -115,8 +115,8 @@
                 "round_value": 0
             }
         },
-        "muscle": {
-            "name": "Muscle in %",
+        "muscle_ratio": {
+            "name": "Muscle Ratio in %",
             "incremental" : false,
             "data_type": "DT_Scaling",
             "conversion" : "",
@@ -129,8 +129,8 @@
                 "round_value": 0
             }
         },
-        "water": {
-            "name": "Water in %",
+        "body_water": {
+            "name": "Body Water in %",
             "incremental" : false,
             "data_type": "DT_Scaling",
             "conversion" : "",
@@ -143,8 +143,8 @@
                 "round_value": 0
             }
         },
-        "bone": {
-            "name": "Bone in %",
+        "bone_ratio": {
+            "name": "Bone Ratio in %",
             "incremental" : false,
             "data_type": "DT_Scaling",
             "conversion" : "",
