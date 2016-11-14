@@ -1,5 +1,7 @@
 // pesée ///////////////////////////////////////
 
+! array bodyJeFais = j ai|je fais
+
 // ##feature## enregistrer le poids et d'autres informations liées
 
 // poids
@@ -11,7 +13,7 @@
 // non nommé
 + je pese * [@kg]
 * <get name> == undefined  => <set dialog=set_weight><set weight=<star>>Qui es tu ?
-- <call>do_command_per_reference fr_FR, DT_kgWeight, set_weight, <get name>, <star1></call>
+- <call>do_command_per_reference fr_FR, DT_kgWeight, set_weight, <get name>, <star1></call>. Tu pèses <star1> kilos.
 
 // pour plus d'infos que le 'qui es tu ?', voir package domogik-brain-base, fichier user.rive
 + *
@@ -23,28 +25,28 @@
 * <get dialog> == get_water  =>  <set dialog=undefined> <set name=<star>> {@quel est mon pourcentage d eau}
 * <get dialog> == set_water  =>  <set dialog=undefined> <set name=<star>> {@je fais <get water> pourcent d'eau}
 * <get dialog> == get_bone   =>  <set dialog=undefined> <set name=<star>> {@quel est mon pourcentage d os}
-* <get dialog> == set_bone   =>  <set dialog=undefined> <set name=<star>> {@je fais <get bone> pourcent d'os}
+* <get dialog> == set_bone   =>  <set dialog=undefined> <set name=<star>> {@je fais <get bone> pourcent d os}
 * <get dialog> == get_fat    =>  <set dialog=undefined> <set name=<star>> {@quel est mon pourcentage de graisse}
 * <get dialog> == set_fat    =>  <set dialog=undefined> <set name=<star>> {@je fais <get fat> pourcent de gras}
 
 
 // autres données
 
-+ je fais * [@pourcent] de (muscle@s|masse musculaire)
-* <get name> == undefined  => <set dialog=set_muscle><set muscle=<star>>Qui es tu ?
-- <call>do_command_per_reference fr_FR, DT_Scaling, set_muscle, <get name>, <star1></call>
++ (@bodyJeFais) * [@pourcent] de (muscle@s|masse musculaire)
+* <get name> == undefined  => <set dialog=set_muscle><set muscle=<star2>>Qui es tu ?
+- <call>do_command_per_reference fr_FR, DT_Scaling, set_muscle, <get name>, <star1></call>. Tu as <star2> pourcents de masse musculaire.
 
-+ je fais * [@pourcent] (d eau|de masse aqueuse)
-* <get name> == undefined  => <set dialog=set_water><set water=<star>>Qui es tu ?
-- <call>do_command_per_reference fr_FR, DT_Scaling, set_water, <get name>, <star1></call>
++ (@bodyJeFais) * [@pourcent] (d eau|de masse aqueuse)
+* <get name> == undefined  => <set dialog=set_water><set water=<star2>>Qui es tu ?
+- <call>do_command_per_reference fr_FR, DT_Scaling, set_water, <get name>, <star1></call>. Tu as <star2> pourcents de masse aqueuse.
 
-+ je fais * [@pourcent] (d os|de masse osseuse)
-* <get name> == undefined  => <set dialog=set_bone><set bone=<star>>Qui es tu ?
-- <call>do_command_per_reference fr_FR, DT_Scaling, set_bone, <get name>, <star1></call>
++ (@bodyJeFais) * [@pourcent] (d os|de masse osseuse)
+* <get name> == undefined  => <set dialog=set_bone><set bone=<star2>>Qui es tu ?
+- <call>do_command_per_reference fr_FR, DT_Scaling, set_bone, <get name>, <star1></call>. Tu as <star2> pourcents de masse osseuse.
 
-+ je fais * [@pourcent] de (graisse|gras|masse graisseuse|masse grasse)
-* <get name> == undefined  => <set dialog=set_fat><set fat=<star>>Qui es tu ?
-- <call>do_command_per_reference fr_FR, DT_Scaling, set_fat, <get name>, <star1></call>
++ (@bodyJeFais) * [@pourcent] de (graisse|gras|masse graisseuse|masse grasse)
+* <get name> == undefined  => <set dialog=set_fat><set fat=<star2>>Qui es tu ?
+- <call>do_command_per_reference fr_FR, DT_Scaling, set_fat, <get name>, <star1></call>. Tu as <star2> pourcents de masse grasse.
 
 
 

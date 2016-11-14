@@ -11,14 +11,4 @@ For each language below, set the butler to the related language in /etc/domogik/
 French tests
 ============
 
-* je pèse 70 kilos : va demande 'qui es tu ?', répondre avec le nom du device créé. Va répondre 'Ok.'
-* je fais 20 pourcents de masse graisseuse : répond 'Ok.'.
-* je fais 60 pourcents de masse aqueuse : répond 'Ok.'.
-* je fais 30 pourcents de masse musculaire : répond 'Ok.'.
-* je fais 3 pourcents de masse osseuse : répond 'Ok.'.
-* oublie moi : ceci va faire oublier le nom au butler. A la question suivante, il va redemander qui on est. Redonner le nom du device.
-* quel est mon poids : réponds '... 70 kg'
-* quelle est ma masse graisseuse : réponds '... 20 %'
-* donne-moi ma masse aqueuse : réponds '... 60 %'
-* quel est mon pourcentage de muscle : réponds '... 30 %'
-* dis-moi pour pourcentage de masse osseuse : réponds '... 3 %'
+* see the file **tests/manual_tests-fr_FR.md**
