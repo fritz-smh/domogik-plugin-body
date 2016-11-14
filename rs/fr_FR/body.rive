@@ -33,21 +33,23 @@
 
 // autres données
 
+// TODO : mieux gérer le cas de la personne non connue
+
 + (@bodyJeFais) * [@pourcent] de (muscle@s|masse musculaire)
 * <get name> == undefined  => <set dialog=set_muscle><set muscle=<star2>>Qui es tu ?
-- <call>do_command_per_reference fr_FR, DT_Scaling, set_muscle, <get name>, <star1></call> <get name>. Tu as <star2> pourcents de masse musculaire.
+- <call>do_command_per_reference fr_FR, DT_Scaling, set_muscle, <get name>, <star2></call>, <get name>. Tu as <star2> pourcents de masse musculaire.
 
 + (@bodyJeFais) * [@pourcent] (d eau|de masse aqueuse)
 * <get name> == undefined  => <set dialog=set_water><set water=<star2>>Qui es tu ?
-- <call>do_command_per_reference fr_FR, DT_Scaling, set_water, <get name>, <star1></call> <get name>. Tu as <star2> pourcents de masse aqueuse.
+- <call>do_command_per_reference fr_FR, DT_Scaling, set_water, <get name>, <star2></call>, <get name>. Tu as <star2> pourcents de masse aqueuse.
 
 + (@bodyJeFais) * [@pourcent] (d os|de masse osseuse)
 * <get name> == undefined  => <set dialog=set_bone><set bone=<star2>>Qui es tu ?
-- <call>do_command_per_reference fr_FR, DT_Scaling, set_bone, <get name>, <star1></call> <get name>. Tu as <star2> pourcents de masse osseuse.
+- <call>do_command_per_reference fr_FR, DT_Scaling, set_bone, <get name>, <star2></call>, <get name>. Tu as <star2> pourcents de masse osseuse.
 
 + (@bodyJeFais) * [@pourcent] de (graisse|gras|masse graisseuse|masse grasse)
 * <get name> == undefined  => <set dialog=set_fat><set fat=<star2>>Qui es tu ?
-- <call>do_command_per_reference fr_FR, DT_Scaling, set_fat, <get name>, <star1></call> <get name>. Tu as <star2> pourcents de masse grasse.
+- <call>do_command_per_reference fr_FR, DT_Scaling, set_fat, <get name>, <star2></call>, <get name>. Tu as <star2> pourcents de masse grasse.
 
 
 
@@ -59,19 +61,19 @@
 
 + shortcut body muscle
 * <get name> == undefined  => <set dialog=get_muscle>Qui es tu ?
-- Ta masse musculaire est <call>get_sensor_value_per_reference fr_FR, DT_Scaling, %, muscle, <get name></call>
+- Ta masse musculaire est <call>get_sensor_value_per_reference fr_FR, DT_Scaling, %, muscle_ratio, <get name></call>
 
 + shortcut body water
 * <get name> == undefined  => <set dialog=get_water>Qui es tu ?
-- Ta masse aqueuse est <call>get_sensor_value_per_reference fr_FR, DT_Scaling, %, water, <get name></call>
+- Ta masse aqueuse est <call>get_sensor_value_per_reference fr_FR, DT_Scaling, %, body_water, <get name></call>
 
 + shortcut body bone
 * <get name> == undefined  => <set dialog=get_bone>Qui es tu ?
-- Ta masse osseuse est <call>get_sensor_value_per_reference fr_FR, DT_Scaling, %, bone, <get name></call>
+- Ta masse osseuse est <call>get_sensor_value_per_reference fr_FR, DT_Scaling, %, bone_ratio, <get name></call>
 
 + shortcut body fat
 * <get name> == undefined  => <set dialog=get_fat>Qui es tu ?
-- Ta masse graisseuse est <call>get_sensor_value_per_reference fr_FR, DT_Scaling, %, fat, <get name></call>
+- Ta masse graisseuse est <call>get_sensor_value_per_reference fr_FR, DT_Scaling, %, fat_ratio, <get name></call>
 
 
 
