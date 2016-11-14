@@ -24,3 +24,18 @@ MOI > Je fais 60 pourcent de masse aqueuse
 BUTLER > OK. Tu as 60 pourcents de masse aqueuse. 
 MOI > Je fais 20 pourcent de masse grasse
 BUTLER > OK. Tu as 20 pourcents de masse grasse. 
+
+MOI > oublie moi
+BUTLER > Ok
+MOI > je fais 2 pourcents de masse osseuse 
+BUTLER > Qui es tu ?
+MOI > je suis Frédéric
+BUTLER > OK. Tu as 2 % pourcents de masse osseuse.
+
+MOI > oublie moi
+BUTLER > Ok
+MOI > je fais 60 pourcents de masse aqueuse 
+BUTLER > Qui es tu ?
+MOI > je suis Frédéric
+BUTLER > OK. Tu as 2 % pourcents de masse aqueuse.
+
